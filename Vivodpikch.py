@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtGui import QPixmap
 from PyQt5 import uic
+from PyQt5.QtWidgets import QPushButton
 
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtWidgets import QLabel, QHBoxLayout
@@ -15,7 +16,7 @@ class MyWidget(QMainWindow):
 
     def run(self):
         hbox = QHBoxLayout(self)
-        pixmap = QPixmap('sun.png')
+        pixmap = QPixmap("sun.png")
 
         lbl = QLabel(self)
         lbl.setPixmap(pixmap)
