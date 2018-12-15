@@ -3,27 +3,21 @@ from PyQt5.QtGui import QPixmap
 from PyQt5 import uic
 
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.QtWidgets import QLabel, QHBoxLayout
+from PyQt5.QtWidgets import QLabel, QHBoxLayout,  QWidget
 
 
-class MyWidget(QMainWindow):
+class MyWidget(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi('unt.ui', self)
+        uic.loadUi('new.ui', self)
 
         self.pushButton.clicked.connect(self.run)
 
     def run(self):
-        hbox = QHBoxLayout(self)
-        pixmap = QPixmap('sun.png')
+        pixmap = QPixmap('sun2.jpg')
+        self.label.setPixmap(pixmap)
+        self.label.resize(pixmap.width(), pixmap.height())
 
-        lbl = QLabel(self)
-        lbl.setPixmap(pixmap)
-
-        hbox.addWidget(lbl)
-        self.setLayout(hbox)
-
-        self.move(300, 200)
         self.show()
 
 
